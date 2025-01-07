@@ -10,6 +10,7 @@ import { Provider } from 'react-redux';
 
 const App = () => {
   return (
+    
     <Provider store={store}>
     <Router>
       <div className="bg-[rgb(244,244,246)]">
@@ -22,6 +23,7 @@ const App = () => {
       </div>
     </Router>
     </Provider>
+    
   );
 };
 

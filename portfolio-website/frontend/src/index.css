@@ -2,16 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@layer base {
+  body {
+    @apply m-0 font-sans antialiased;
+  }
+  
+  code {
+    @apply font-mono;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer components {
+  .nav-item {
+    @apply font-bold px-2 transform translate-y-[2px] dark:text-[rgb(244,244,246)] transition-colors duration-200;
+  }
+
+  .nav-dropDown-page {
+    @apply fixed left-0 top-[32px] w-full flex flex-col bg-[rgb(244,244,246)] pl-12 dark:bg-[rgb(9,9,10)] 
+           overflow-hidden max-h-0 pointer-events-none z-[2];
+  }
+
+  .nav-dropdown-phone-item {
+    @apply pb-3 text-3xl font-bold pointer-events-auto opacity-0
+           text-black dark:text-white
+           transition-colors duration-300;
+  }
+
+  .nav-dropDown-item {
+    @apply pb-3 font-bold pointer-events-auto opacity-0
+           text-black dark:text-white
+           transition-colors duration-300;
+  }
 }
+
+
