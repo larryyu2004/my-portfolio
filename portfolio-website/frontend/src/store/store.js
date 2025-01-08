@@ -1,12 +1,16 @@
 import { configureStore } from "@reduxjs/toolkit";
-import dropdownReducer from "./modules/dropdownSlice";
+import HomedropdownReducer from "./modules/homedropdownSlice";
 import themeReducer from "./modules/themeSlice";
 import phonedropdownReducer from "./modules/phonedropdownSlice";
+import ProjectsdropdownReducer from "./modules/projectsdropdownSlice";
+import ContactdropdownReducer from "./modules/contactdropdownSlice";
 
 export const store = configureStore({
     reducer: {
-        dropdown: dropdownReducer,
+        Homedropdown: HomedropdownReducer,
         theme: themeReducer,
-        phonedropdown: phonedropdownReducer
+        phonedropdown: phonedropdownReducer,
+        Projectsdropdown: ProjectsdropdownReducer,
+        Contactdropdown: ContactdropdownReducer
     }
 });

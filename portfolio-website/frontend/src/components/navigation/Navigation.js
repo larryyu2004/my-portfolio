@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { setDropdownVisible } from '../../store/modules/dropdownSlice';
 
 import homelogo from '../../assets/svg/device_hub_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg';
 import sun from '../../assets/svg/sun-2-svgrepo-com.svg';
@@ -10,27 +9,40 @@ import phoneMenu from '../../assets/svg/align-right-svgrepo-com.svg';
 import HomeDropdown from './Nav-dropdown-home';
 import NavDropdownPhone from './Nav-dropdown-phone';
 import ProjectDropdown from './Nav-dropdown-projects';
+import ContactDropdown from './Nav-dropdown-contact';
 import { toggleDarkMode } from '../../store/modules/themeSlice';
-import { setPhonedropdownVisible } from '../../store/modules/phonedropdownSlice'
-
+import { setPhonedropdownVisible } from '../../store/modules/phonedropdownSlice';
+import { setProjectsDropdownVisible } from '../../store/modules/projectsdropdownSlice';
+import { setHomeDropdownVisible } from '../../store/modules/homedropdownSlice';
+import { setContactDropdownVisible } from '../../store/modules/contactdropdownSlice';
 
 const Navigation = () => {
   const dispatch = useDispatch();
   
-  const handleMouseEnter = () => dispatch(setDropdownVisible(true));
-  const handleMouseLeave = () => dispatch(setDropdownVisible(false));
+  const handleHomeMouseEnter = () => dispatch(setHomeDropdownVisible(true));
+  const handleHomeMouseLeave = () => dispatch(setHomeDropdownVisible(false));
+
+  const handleProjectsMouseEnter = () => dispatch(setProjectsDropdownVisible(true));
+  const handleProjectsMouseLeave = () => dispatch(setProjectsDropdownVisible(false));
+
+  const handleContactMouseEnter = () => dispatch(setContactDropdownVisible(true));
+  const handleContactMouseLeave = () => dispatch(setContactDropdownVisible(false));
 
   const darkMode = useSelector((state) => state.theme.darkMode);
+  const PhoneDropDown = useSelector((state) => state.phonedropdown.isVisible);
+  const HomeDropdownVisible = useSelector((state) => state.Homedropdown.isVisible);
+
   const handleDarkMode = () => {
     dispatch(toggleDarkMode());
-  }
-
-  const PhoneDropDown = useSelector((state) => state.phonedropdown.isVisible);
-  const handlePhoneDropDown = () => dispatch(setPhonedropdownVisible(!PhoneDropDown));
+  };
+  
+  const handlePhoneDropDown = () => {
+    dispatch(setPhonedropdownVisible(!PhoneDropDown));
+  };
   
   return (
     <nav className="fixed top-0 left-0 w-full flex justify-center items-center gap-4 p-1 z-[20] pb-10 bg-[rgb(244,244,246)] dark:bg-[rgb(9,9,10)] duration-200">
-      <ul className="flex gap-4 items-center">
+      <ul className="flex gap-4 items-center ">
         <Link to="/">
           <div className="text-2xl font-bold">
             <img 
@@ -49,8 +61,8 @@ const Navigation = () => {
 
         <div 
           className="relative"
-          onMouseEnter={handleMouseEnter}                                                                                
-          onMouseLeave={handleMouseLeave}
+          onMouseEnter={handleHomeMouseEnter}                                                                                
+          onMouseLeave={handleHomeMouseLeave}
         >
           <li className="nav-item hidden md:block">
             <Link to="/">Home</Link>
@@ -60,8 +72,8 @@ const Navigation = () => {
 
         <div 
           className="relative"
-          onMouseEnter={handleMouseEnter}                                                                                
-          onMouseLeave={handleMouseLeave}
+          onMouseEnter={handleProjectsMouseEnter}                                                                                
+          onMouseLeave={handleProjectsMouseLeave}
         >
         <li className="nav-item hidden md:block">
           <Link to="/projects">Projects</Link>
@@ -69,10 +81,16 @@ const Navigation = () => {
         <ProjectDropdown/>
         </div>
 
-
+        <div 
+          className="relative"
+          onMouseEnter={handleContactMouseEnter}                                                                                
+          onMouseLeave={handleContactMouseLeave}
+        >
         <li className="nav-item hidden md:block">
           <Link to="/contact">Contact</Link>
         </li>
+        <ContactDropdown />
+        </div>
 
         <button
           onClick={handleDarkMode}
