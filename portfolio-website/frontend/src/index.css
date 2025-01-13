@@ -28,6 +28,10 @@
            transition-colors duration-300;
   }
 
+  .nav-dropdown-phone-sub-item {
+    @apply font-bold
+  }
+
   .nav-dropDown-item {
     @apply pb-3 font-bold pointer-events-auto opacity-0
            text-black dark:text-white

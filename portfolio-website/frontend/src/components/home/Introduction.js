@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import profilePicture from '../../assets/svg/man-with-computer-and-headset-svgrepo-com.svg';
+import downloadIcon from '../../assets/svg/download-minimalistic-svgrepo-com.svg';
 
 const Introduction = () => {
     const [text, setText] = useState('');
@@ -9,7 +10,7 @@ const Introduction = () => {
     const [loopNum, setLoopNum] = useState(0);
     const [typingSpeed, setTypingSpeed] = useState(50);
 
-    const toRotate = ['Larry', 'Web developer', 'React developer', 'Frontend developer', 'Backend developer', 'Fullstack developer', 'Software Engineer', 'Tech Enthusiast', 'Learner'];
+    const toRotate = ['Larry', 'Web Developer', 'Frontend Developer', 'Backend Developer', 'Fullstack Developer', 'Software Engineer', 'Tech Enthusiast', 'Learner'];
     const period = 1000;
 
     useEffect(() => {
@@ -69,27 +70,35 @@ const Introduction = () => {
     return (
         <div className='p-2 flex justify-between items-center max-w-7xl mx-auto
                         md: flex-col md:flex-row md:gap-4 md:items-center'>
-            <div className='flex flex-col gap-4 w-1/2 min-h-[96px]
+            <div className='flex flex-col gap-4 w-1/2 min-h-[168px]
                             min-w-[350px] md:min-w-[400px]'>
                <div className='font-bold text-4xl bg-gradient-to-r from-blue-600 to-purple-600
                     dark:from-orange-600 dark:to-yellow-300 text-transparent bg-clip-text'>
                     Hello, I'm
                 </div>
 
-                <div className='font-bold text-4xl bg-gradient-to-r from-blue-600 to-purple-600
+                <div className='font-bold text-4xl min-h-[40px] bg-gradient-to-r from-blue-600 to-purple-600
                     dark:from-orange-600 dark:to-yellow-300 text-transparent bg-clip-text'>
                     {text}
                 </div>
 
-                <div className='font-bold text-4xl bg-gradient-to-r from-blue-600 to-purple-600'>
-                <button
-                    onClick={handleDownloadResume}
-                    className='bg-gradient-to-r from-blue-600 to-purple-600 
-                             dark:from-orange-600 dark:to-yellow-300
-                             text-white font-bold py-2 px-4 rounded-lg
-                             hover:opacity-90 transition-all duration-300'>
-                    Download Resume
-                </button>
+                <div className='h-[45px] w-[150px] flex gap-[10px] text-xl 
+                    bg-gradient-to-r from-blue-600 to-purple-600
+                    dark:from-orange-600 dark:to-yellow-300
+                    rounded-xl pl-[5px] justify-center items-center cursor-pointer' 
+
+                    onClick={handleDownloadResume}>
+                    <div
+                        className='text-white'>
+                        Resume
+                    </div>
+                    <img 
+                        src={downloadIcon} 
+                        alt="download icon" 
+                        className='w-[25px] h-[25px] cursor-pointer
+                            [filter:invert(100%)_sepia(0%)_saturate(0%)_hue-rotate(0deg)_brightness(1000%)_contrast(100%)]
+                            transition-all duration-300'
+                    />
                 </div>
             </div>
 

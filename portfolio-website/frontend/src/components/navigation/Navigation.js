@@ -5,6 +5,7 @@ import homelogo from '../../assets/svg/device_hub_24dp_E8EAED_FILL0_wght400_GRAD
 import sun from '../../assets/svg/sun-2-svgrepo-com.svg';
 import moon from '../../assets/svg/moon-svgrepo-com.svg';
 import phoneMenu from '../../assets/svg/align-right-svgrepo-com.svg';
+import cross from '../../assets/svg/cross-svgrepo-com.svg';
 
 import HomeDropdown from './Nav-dropdown-home';
 import NavDropdownPhone from './Nav-dropdown-phone';
@@ -14,6 +15,7 @@ import { toggleDarkMode } from '../../store/modules/themeSlice';
 import { setPhonedropdownVisible } from '../../store/modules/phonedropdownSlice';
 import { setProjectsDropdownVisible } from '../../store/modules/projectsdropdownSlice';
 import { setHomeDropdownVisible } from '../../store/modules/homedropdownSlice';
+import { setPhonedropupVisible } from '../../store/modules/phonedropupSlice';
 import { setContactDropdownVisible } from '../../store/modules/contactdropdownSlice';
 
 const Navigation = () => {
@@ -30,6 +32,7 @@ const Navigation = () => {
 
   const darkMode = useSelector((state) => state.theme.darkMode);
   const PhoneDropDown = useSelector((state) => state.phonedropdown.isVisible);
+  const PhoneDropUp = useSelector((state) => state.phonedropup.isVisible);
   const HomeDropdownVisible = useSelector((state) => state.Homedropdown.isVisible);
 
   const handleDarkMode = () => {
@@ -39,6 +42,14 @@ const Navigation = () => {
   const handlePhoneDropDown = () => {
     dispatch(setPhonedropdownVisible(!PhoneDropDown));
   };
+
+  const handlePhoneDropUp = () => {
+    dispatch(setPhonedropupVisible(!PhoneDropUp));
+    setTimeout(() => {
+      dispatch(setPhonedropdownVisible(false));
+      dispatch(setPhonedropupVisible(false));
+    }, 500);
+  }
   
   return (
     <nav className="fixed top-0 left-0 w-full flex justify-center items-center gap-4 p-1 z-[20] pb-10 bg-[rgb(244,244,246)] dark:bg-[rgb(9,9,10)] duration-200">
@@ -98,12 +109,24 @@ const Navigation = () => {
           {darkMode ? <img src={sun} alt='sun logo' className='w-6 h-6 [filter:invert(100%)_sepia(0%)_saturate(0%)_hue-rotate(0deg)_brightness(100%)_contrast(100%)]'/> : <img src={moon} alt='sun logo' className='w-6 h-6'/>}
         </button>
 
-        <img 
+        {!PhoneDropDown ? 
+        (<img 
           src={phoneMenu} 
           alt='phone menu' 
-          className='w-6 h-6 absolute right-4 cursor-pointer dark:[filter:invert(100%)_sepia(0%)_saturate(0%)_hue-rotate(0deg)_brightness(100%)_contrast(100%)] block md:hidden'
+          className='w-6 h-6 absolute right-4 cursor-pointer 
+          dark:[filter:invert(100%)_sepia(0%)_saturate(0%)_hue-rotate(0deg)_brightness(100%)_contrast(100%)] block md:hidden
+          '
           onClick={handlePhoneDropDown}
-        />
+        />)
+        :
+        (<img 
+          src={cross} 
+          alt='cross' 
+          className='w-6 h-6 absolute right-4 cursor-pointer 
+          dark:[filter:invert(100%)_sepia(0%)_saturate(0%)_hue-rotate(0deg)_brightness(100%)_contrast(100%)] block md:hidden
+          '
+          onClick={handlePhoneDropUp}
+        />)}
         
         
       </ul>
