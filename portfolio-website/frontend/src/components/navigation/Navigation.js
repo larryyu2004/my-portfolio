@@ -8,15 +8,15 @@ import phoneMenu from '../../assets/svg/align-right-svgrepo-com.svg';
 import cross from '../../assets/svg/cross-svgrepo-com.svg';
 
 import HomeDropdown from './Nav-dropdown-home';
-import NavDropdownPhone from './Nav-dropdown-phone';
+import NavDropdownPhone from './Nav-phone/Nav-dropdown-phone';
 import ProjectDropdown from './Nav-dropdown-projects';
 import ContactDropdown from './Nav-dropdown-contact';
-import { toggleDarkMode } from '../../store/modules/themeSlice';
-import { setPhonedropdownVisible } from '../../store/modules/phonedropdownSlice';
-import { setProjectsDropdownVisible } from '../../store/modules/projectsdropdownSlice';
-import { setHomeDropdownVisible } from '../../store/modules/homedropdownSlice';
-import { setPhonedropupVisible } from '../../store/modules/phonedropupSlice';
-import { setContactDropdownVisible } from '../../store/modules/contactdropdownSlice';
+import { toggleDarkMode } from '../../store/modules/nav/themeSlice';
+import { setPhonedropdownVisible } from '../../store/modules/nav/nav-phone/phonedropdownSlice';
+import { setProjectsDropdownVisible } from '../../store/modules/nav/nav/projectsdropdownSlice';
+import { setHomeDropdownVisible } from '../../store/modules/nav/nav/homedropdownSlice';
+import { setPhonedropupVisible } from '../../store/modules/nav/nav-phone/phonedropupSlice';
+import { setContactDropdownVisible } from '../../store/modules/nav/nav/contactdropdownSlice';
 
 const Navigation = () => {
   const dispatch = useDispatch();
@@ -59,7 +59,7 @@ const Navigation = () => {
             <img 
               src={homelogo} 
               alt="home logo" 
-              className="w-8 h-8 transition-all duration-500 md:l-0
+              className="w-88 h-8 transition-all duration-500 md:l-0
                 [filter:invert(54%)_sepia(11%)_saturate(1641%)_hue-rotate(197deg)_brightness(87%)_contrast(87%)]
                 hover:[filter:invert(100%)_sepia(50%)_saturate(2000%)_hue-rotate(280deg)_brightness(100%)_contrast(100%)]
                 dark:[filter:invert(100%)_sepia(0%)_saturate(0%)_hue-rotate(0deg)_brightness(1000%)_contrast(100%)]
