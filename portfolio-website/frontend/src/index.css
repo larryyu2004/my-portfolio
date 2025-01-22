@@ -29,7 +29,7 @@
   }
 
   .nav-dropdown-phone-sub-item {
-    @apply font-bold
+    @apply font-bold text-[20px] opacity-0 text-black dark:text-white transition-colors duration-300
   }
 
   .nav-dropDown-item {

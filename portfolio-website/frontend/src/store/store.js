@@ -5,8 +5,7 @@ import phonedropdownReducer from "./modules/nav/nav-phone/phonedropdownSlice";
 import phonedropupRecuder from "./modules/nav/nav-phone/phonedropupSlice";
 import ProjectsdropdownReducer from "./modules/nav/nav/projectsdropdownSlice";
 import ContactdropdownReducer from "./modules/nav/nav/contactdropdownSlice";
-import phonehomeSliceReducer from "./modules/nav/nav-phone/phonehomeSlice";
-import phoneprojectSliceReducer from "./modules/nav/nav-phone/phoneprojectsSlice"
+
 
 
 
@@ -18,7 +17,5 @@ export const store = configureStore({
         phonedropup: phonedropupRecuder,
         Projectsdropdown: ProjectsdropdownReducer,
         Contactdropdown: ContactdropdownReducer,
-        phonehome: phonehomeSliceReducer,
-        phoneprojects: phoneprojectSliceReducer
     }
 });

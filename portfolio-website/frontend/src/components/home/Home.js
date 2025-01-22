@@ -3,6 +3,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import Introduction from './Introduction';
+import Education from './Education';
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -21,6 +22,7 @@ const Home = () => {
 
       
       <Introduction />
+      <Education />
       <h1 className="text-4xl font-bold dark:text-[rgb(244,244,246)] transition-colors duration-200">Welcome to My Portfolio</h1>
       <p className="mt-4 dark:text-[rgb(244,244,246)] transition-colors duration-200">Frontend Developer | React Specialist</p>
       <h1 className="text-4xl font-bold dark:text-[rgb(244,244,246)] transition-colors duration-200">Welcome to My Portfolio</h1>
