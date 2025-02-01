@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { setPhonedropdownVisible } from '../../../store/modules/nav/nav-phone/phonedropdownSlice';
 import { setPhonedropupVisible } from '../../../store/modules/nav/nav-phone/phonedropupSlice';
 import { connect } from 'react-redux';
+
 import HomeItems from './Nav-phone-home';
 import ProjectsItems from './Nav-phone-projects';
 import ContactItems from './Nav-phone-contact';
@@ -31,7 +32,6 @@ class NavDropdownPhone extends Component {
                 this.handlePhoneDropUp();
             }
         })
-        
     }
     handlePhoneDropUp = () => {
         this.props.setPhonedropupVisible(!this.props.PhoneDropUp)
@@ -41,10 +41,18 @@ class NavDropdownPhone extends Component {
         }, 500);
     }
 
+    componentDidUpdate(prevProps) {
+        // PhoneDropDown (change from true to false)
+        if(prevProps.PhoneDropDown && !this.props.PhoneDropDown) {
+            this.props.setPhonedropdownVisible(false);
+            this.props.setPhonedropupVisible(false);
+            this.setState({ activeSection: null });
+        }
+    }
+
     render() {
         const { PhoneDropDown, PhoneDropUp} = this.props;
         const { activeSection } = this.state;
-        const AnimateForPhoneItem = 'animate-[fadeIn_1s_ease-in-out_1s_forwards]';
         return (
             PhoneDropDown && (
                 <>
@@ -61,14 +69,14 @@ class NavDropdownPhone extends Component {
                     {(activeSection === 'home') && (<HomeItems />)}
                     </div>
                     
-                    <div className='flex flex-col gap-3'>
-                    <Link to="/projects" className={`nav-dropdown-phone-item animate-[fadeIn_0.3s_ease-in-out_0.4s_forwards] dark:text-white ${(activeSection === 'home') && (AnimateForPhoneItem)}`}
+                    <div className='flex flex-col gap-3 min-w-[115.59px]'>
+                    <Link to="/projects" className={`nav-dropdown-phone-item animate-[fadeIn_0.3s_ease-in-out_0.5s_forwards] dark:text-white`}
                     onClick={() => this.handleSectionClick('projects')}>Projects</Link>
                     {(activeSection === 'projects') && <ProjectsItems />}
                     </div>
     
-                    <div className='flex flex-col gap-3'>
-                    <Link to="/contact" className={`nav-dropdown-phone-item animate-[fadeIn_0.3s_ease-in-out_0.5s_forwards] dark:text-white ${((activeSection === 'home') || (activeSection === 'projects')) && (AnimateForPhoneItem)}`}
+                    <div className='flex flex-col gap-3 min-w-[115.59px]'>
+                    <Link to="/contact" className={`nav-dropdown-phone-item animate-[fadeIn_0.3s_ease-in-out_0.7s_forwards] dark:text-white`}
                     onClick={() => this.handleSectionClick('contact')}>Contact</Link>
                     {(activeSection === 'contact') && <ContactItems />}
                     </div>

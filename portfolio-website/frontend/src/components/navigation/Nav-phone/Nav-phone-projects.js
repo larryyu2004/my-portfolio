@@ -1,32 +1,57 @@
-import react from "react";
+import React, { Component } from "react";
 import { Link } from 'react-router-dom';
+import { setPhonedropdownVisible } from '../../../store/modules/nav/nav-phone/phonedropdownSlice';
+import { setPhonedropupVisible } from '../../../store/modules/nav/nav-phone/phonedropupSlice';
+import { connect } from 'react-redux';
 
-const ProjectsItems = () => {
-    return (
-        <div className='flex flex-col gap-3'>
-            <Link to="/project1" className='nav-dropdown-phone-sub-item animate-[fadeIn_0.3s_ease-in-out_0.1s_forwards]'>
-                Operating System Engineering
-            </Link>
-            <Link to="/project1" className='nav-dropdown-phone-sub-item animate-[fadeIn_0.3s_ease-in-out_0.15s_forwards]'>
-                My Portfolio
-            </Link>
-            <Link to="/project1" className='nav-dropdown-phone-sub-item animate-[fadeIn_0.3s_ease-in-out_0.20s_forwards]'>
-                Machine Learning
-            </Link>
-            <Link to="/project1" className='nav-dropdown-phone-sub-item animate-[fadeIn_0.3s_ease-in-out_0.25s_forwards]'>
-                Portfolio
-            </Link>
-            <Link to="/project1" className='nav-dropdown-phone-sub-item animate-[fadeIn_0.3s_ease-in-out_0.30s_forwards]'>
-                Web Fundamental
-            </Link>
-            <Link to="/project1" className='nav-dropdown-phone-sub-item animate-[fadeIn_0.3s_ease-in-out_0.35s_forwards]'>
-                React Fundamental
-            </Link>
-            <Link to="/project1" className='nav-dropdown-phone-sub-item animate-[fadeIn_0.3s_ease-in-out_0.40s_forwards]'>
-                My Leetcode
-            </Link>
-        </div>
-    )
+class ProjectsItems extends Component {
+    constructor(props) {
+        super(props);
+    }
+    handlePhoneDropUp = () => {
+        this.props.setPhonedropupVisible(!this.props.PhoneDropUp)
+        setTimeout(() => {
+            this.props.setPhonedropdownVisible(false);
+            this.props.setPhonedropupVisible(false);
+        }, 500);
+    }
+    render() {
+        const items = [
+            { label: 'Operating System Engineering', delay: 0.1 },
+            { label: 'My Portfolio', delay: 0.15 },
+            { label: 'Machine Learning', delay: 0.20 },
+            { label: 'Portfolio', delay: 0.25 },
+            { label: 'Web Fundamental', delay: 0.30 },
+            { label: 'React Fundamental', delay: 0.35 },
+            { label: 'My Leetcode', delay: 0.40 }
+        ];
+        return (
+            <>
+            <div className='flex flex-col gap-3 min-w-[115.59px]'>
+                {items.map((item, index) => (
+                    <Link 
+                    key={index}
+                    to="/projects" 
+                    className={`nav-dropdown-phone-sub-item opacity-0`}
+                    style={{ animation: `fadeIn 0.3s ease-in-out ${item.delay}s forwards` }}
+                    onClick={this.handlePhoneDropUp}>
+                        {item.label}
+                    </Link>
+                ))}
+            </div>
+            </>
+        );
+    }
 }
+// To read data from the Redux store
+const mapStateToProps = (state) => ({
+    PhoneDropDown: state.phonedropdown.isVisible,
+    PhoneDropUp: state.phonedropup.isVisible,
+});
+// To send updates to the Redux store
+const mapDispatchToProps = {
+    setPhonedropdownVisible,
+    setPhonedropupVisible,
+};
 
-export default ProjectsItems;
+export default connect(mapStateToProps, mapDispatchToProps)(ProjectsItems);

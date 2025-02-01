@@ -82,8 +82,8 @@ const Introduction = () => {
                     {text}
                 </div>
 
-                <div className='h-[45px] w-[150px] flex gap-[10px] text-xl 
-                    bg-gradient-to-r from-blue-600 to-purple-600
+                <div className='h-[40px] w-[150px] flex gap-[10px] text-xl 
+                    bg-gradient-to-r from-blue-600 to-purple-600 transition-all duration-300 transform hover:scale-105
                     dark:from-orange-600 dark:to-yellow-300
                     rounded-xl pl-[5px] justify-center items-center cursor-pointer' 
 

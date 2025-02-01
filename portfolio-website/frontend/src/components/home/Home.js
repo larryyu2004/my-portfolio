@@ -3,7 +3,8 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import Introduction from './Introduction';
-import Education from './Education';
+import Education from './Education'
+
 
 const Home = () => {
   const dispatch = useDispatch();

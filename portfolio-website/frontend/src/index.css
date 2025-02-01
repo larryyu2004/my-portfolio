@@ -19,7 +19,7 @@
 
   .nav-dropDown-page {
     @apply fixed left-0 top-[32px] w-full flex flex-col bg-[rgb(244,244,246)] pl-12 dark:bg-[rgb(9,9,10)] 
-           overflow-hidden max-h-0 pointer-events-none z-[2];
+           overflow-hidden max-h-0 pointer-events-auto z-[2];
   }
 
   .nav-dropdown-phone-item {
@@ -34,8 +34,8 @@
 
   .nav-dropDown-item {
     @apply pb-3 font-bold pointer-events-auto opacity-0
-           text-black dark:text-white
-           transition-colors duration-300;
+           text-black dark:text-white z-[30]
+           transition-colors duration-300 cursor-pointer
   }
 }
 
