@@ -1,12 +1,27 @@
 {
   "name": "portfolio-website",
   "version": "1.0.0",
+  "description": "My personal portfolio website",
   "main": "index.js",
+  "homepage": "https://larryyu2004.github.io/my-portfolio",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "start": "react-scripts start",
+  "build": "react-scripts build",
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d build",
+  "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": ""
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^7.1.1",
+    "axios": "^1.7.9",
+    "dotenv": "^16.4.7",
+    "web-vitals": "^4.2.4"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  },
+  "author": "Larry Yu",
+  "license": "ISC"
 }
