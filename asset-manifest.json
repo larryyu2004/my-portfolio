@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/static/css/main.aabafca8.css",
+    "main.js": "/static/js/main.6043bfa0.js",
+    "static/js/151.90a1ae94.chunk.js": "/static/js/151.90a1ae94.chunk.js",
+    "static/media/man-with-computer-and-headset-svgrepo-com.svg": "/static/media/man-with-computer-and-headset-svgrepo-com.ec2fd2a5b5ea32dccecaf9603b9c69af.svg",
+    "static/media/sun-2-svgrepo-com.svg": "/static/media/sun-2-svgrepo-com.1b42bddd86996055a9f4db91ed86a70f.svg",
+    "static/media/align-right-svgrepo-com.svg": "/static/media/align-right-svgrepo-com.5530b5cd12f287172f930bc74b9d9111.svg",
+    "static/media/download-minimalistic-svgrepo-com.svg": "/static/media/download-minimalistic-svgrepo-com.e19e4765f223f61db42d28f92ddbcd4e.svg",
+    "index.html": "/index.html",
+    "static/media/moon-svgrepo-com.svg": "/static/media/moon-svgrepo-com.5a635996c6b52778c1b94186412cd138.svg",
+    "static/media/cross-svgrepo-com.svg": "/static/media/cross-svgrepo-com.30252da164c2bf87d2c1f49ad612319b.svg",
+    "static/media/device_hub_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg": "/static/media/device_hub_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.aa5c7f1af61adfb2b8e75ef50044f112.svg",
+    "main.aabafca8.css.map": "/static/css/main.aabafca8.css.map",
+    "main.6043bfa0.js.map": "/static/js/main.6043bfa0.js.map",
+    "151.90a1ae94.chunk.js.map": "/static/js/151.90a1ae94.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.aabafca8.css",
+    "static/js/main.6043bfa0.js"
+  ]
+}
