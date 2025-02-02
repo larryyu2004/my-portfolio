@@ -33,7 +33,11 @@ const Navigation = () => {
   const darkMode = useSelector((state) => state.theme.darkMode);
   const PhoneDropDown = useSelector((state) => state.phonedropdown.isVisible);
   const PhoneDropUp = useSelector((state) => state.phonedropup.isVisible);
+
   const HomeDropdownVisible = useSelector((state) => state.Homedropdown.isVisible);
+  const ProjectDropdownVisible = useSelector((state) => state.Projectsdropdown.isVisible);
+  const ContactDropdownVisible = useSelector((state) => state.Contactdropdown.isVisible);
+  const isAnyDropdownOpen = HomeDropdownVisible || ProjectDropdownVisible || ContactDropdownVisible;
 
   const handleDarkMode = () => {
     dispatch(toggleDarkMode());
@@ -52,7 +56,9 @@ const Navigation = () => {
   }
   
   return (
-    <nav className="fixed top-0 left-0 w-full flex justify-center items-center gap-4 p-1 z-[20] pb-10 bg-[rgb(244,244,246)] dark:bg-[rgb(9,9,10)] duration-200">
+    <nav className={`fixed top-0 left-0 w-full flex justify-center items-center gap-4 p-1 z-[20] pb-10
+      ${isAnyDropdownOpen ? "bg-[rgba(244,244,246,1)] dark:bg-[rgba(9,9,10,1)]" 
+                          : "bg-[rgba(244,244,246,0.3)] dark:bg-[rgba(9,9,10,0.3)] backdrop-blur-[8px]"}`}>
       
       <ul className="flex gap-4 items-center ">
         <Link to="/">
