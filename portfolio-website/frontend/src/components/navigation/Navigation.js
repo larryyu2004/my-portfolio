@@ -58,7 +58,7 @@ const Navigation = () => {
   return (
     <nav className={`fixed top-0 left-0 w-full flex justify-center items-center gap-4 p-1 z-[20] pb-10
       ${isAnyDropdownOpen ? "bg-[rgba(244,244,246,1)] dark:bg-[rgba(9,9,10,1)]" 
-                          : "bg-[rgba(244,244,246,0.3)] dark:bg-[rgba(9,9,10,0.3)] backdrop-blur-[8px]"}`}>
+                          : "bg-[rgba(244,244,246,0.3)] dark:bg-[rgba(9,9,10,0.3)] backdrop-blur-[10px]"}`}>
       
       <ul className="flex gap-4 items-center ">
         <Link to="/">
