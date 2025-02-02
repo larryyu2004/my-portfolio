@@ -5,7 +5,7 @@ import OS from "../../assets/img/OS.jpg";
 export default class ProjectsCards extends Component {
   render() {
     return (
-      <Link to="/my-portfolio/projects/os" className="block w-full h-full">
+      <Link to="/projects/os" className="block w-full h-full">
         <div
           className="relative max-w-[100vw] min-h-[80vh] flex justify-center items-center cursor-pointer overflow-hidden"
         >

@@ -12,7 +12,7 @@ const Projects = () => {
   const blurBackground = `bg-black/20`;
   
   return (
-    <div className={`min-h-screen mt-[60px]  
+    <div className={`min-h-screen mt-[66px]  
       ${ProjectsdropDownIsVisible ? blurBackground : ''} 
       ${HomedropDownIsVisible ? blurBackground : ''}
       ${ContactDropdownIsVisible ? blurBackground : ''}
