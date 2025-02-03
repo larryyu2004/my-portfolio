@@ -1,10 +1,8 @@
 // src/components/About.js
-import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import React from 'react';
   
 const Contact = () => {
-  const dispatch = useDispatch();
   
   const ProjectsdropDownIsVisible = useSelector((state) => state.Projectsdropdown.isVisible);
   const HomedropDownIsVisible = useSelector((state) => state.Homedropdown.isVisible);
