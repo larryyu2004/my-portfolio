@@ -22,7 +22,7 @@ export default class ProjectsCards extends Component {
         {
             name: 'My Portfolio',
             bgImage: myPortfolio,
-            to: '/projects/my-portfolio',
+            to: '/',
             color: 'indigo1',
         },
 
@@ -34,17 +34,17 @@ export default class ProjectsCards extends Component {
         },
 
         {
+            name: 'Leetcode',
+            bgImage: leetcode,
+            to: '/projects/leetcode',
+            color: 'orange2',
+        },
+
+        {
             name: 'Portfolio',
             bgImage: portfolio,
             to: '/projects/portfolio',
             color: 'gray',
-        },
-
-        {
-            name: 'Web Fundamental',
-            bgImage: webFundamental,
-            to: '/projects/web-fundamental',
-            color: 'orange1',
         },
 
         {
@@ -55,10 +55,10 @@ export default class ProjectsCards extends Component {
         },
 
         {
-            name: 'Leetcode',
-            bgImage: leetcode,
-            to: '/projects/leetcode',
-            color: 'orange2',
+            name: 'Web Fundamental',
+            bgImage: webFundamental,
+            to: '/projects/web-fundamental',
+            color: 'orange1',
         },
     ]
 
@@ -71,7 +71,7 @@ export default class ProjectsCards extends Component {
         'blue': "bg-gradient-to-br from-blue-200 to-blue-500",
         'indigo1': "bg-gradient-to-br from-indigo-500 to-indigo-200",
         'indigo2': "bg-gradient-to-br from-indigo-200 to-indigo-600",
-        'indigo3': "bg-gradient-to-br from-indigo-400 to-indigo-800",
+        'indigo3': "bg-gradient-to-br from-indigo-300 to-indigo-600",
         'purple': "bg-gradient-to-r from-purple-300 to-purple-600",
         'pink': "bg-gradient-to-br from-pink-700 to-pink-300",
         'gray': "bg-gradient-to-br from-gray-100 to-gray-900",
@@ -89,7 +89,7 @@ export default class ProjectsCards extends Component {
                         <div
                         className="relative max-w-[100vw] min-h-[80vh] flex justify-center items-center cursor-pointer overflow-hidden mb-[5px]">
                             <div
-                            className="absolute w-full h-full bg-cover bg-center overflow-hidden transition-transform duration-300 hover:scale-105"
+                            className="absolute w-full h-full bg-cover bg-center overflow-hidden transition-transform duration-300 hover:scale-110"
                             style={{ backgroundImage: `url(${project.bgImage})` }}
                             >
                             </div>
@@ -104,21 +104,3 @@ export default class ProjectsCards extends Component {
     );
   }
 }
-
-{/* 
-<Link to="/projects/os" className="block w-full h-full">
-<div
-className="relative max-w-[100vw] min-h-[80vh] flex justify-center items-center cursor-pointer overflow-hidden"
->
-
-<div
-    className="absolute w-full h-full bg-cover bg-center overflow-hidden transition-transform duration-300 hover:scale-105"
-    style={{ backgroundImage: `url(${OS})` }}
-></div>
-
-
-<h1 className="relative bg-gradient-to-r from-yellow-600 to-yellow-300
-            dark:from-red-600 dark:to-red-300 text-transparent bg-clip-text text-5xl font-bold z-10">Operating System Engineering</h1>
-</div>
-</Link> 
-*/}
