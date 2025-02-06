@@ -15,22 +15,25 @@ export default class ProjectsCards extends Component {
         {
             name: 'Operating System Engineering',
             bgImage: OS,
-            to: '/projects/os',
+            to: 'https://github.com/larryyu2004/XV-6-Lab',
             color: 'blue',
+            delay: 0.3,
         },
 
         {
             name: 'My Portfolio',
             bgImage: myPortfolio,
-            to: '/',
+            to: 'https://github.com/larryyu2004/my-portfolio',
             color: 'indigo1',
+            delay: 0.6,
         },
 
         {
             name: 'Machine Learning',
             bgImage: ML,
-            to: '/projects/ml',
+            to: '/',
             color: 'white',
+            delay: 0.9,
         },
 
         {
@@ -38,27 +41,31 @@ export default class ProjectsCards extends Component {
             bgImage: leetcode,
             to: '/projects/leetcode',
             color: 'orange2',
+            delay: 1.2,
         },
 
         {
             name: 'Portfolio',
             bgImage: portfolio,
-            to: '/projects/portfolio',
+            to: 'https://github.com/larryyu2004/portfolio-website',
             color: 'gray',
+            delay: 1.5,
         },
 
         {
             name: 'React Fundamental',
             bgImage: react,
-            to: '/projects/react-fundamental',
+            to: 'https://github.com/larryyu2004/react-fundamental',
             color: 'indigo3',
+            delay: 1.8,
         },
 
         {
             name: 'Web Fundamental',
             bgImage: webFundamental,
-            to: '/projects/web-fundamental',
+            to: 'https://github.com/larryyu2004/Web-Fundamental',
             color: 'orange1',
+            delay: 2.1,
         },
     ]
 
@@ -77,17 +84,16 @@ export default class ProjectsCards extends Component {
         'gray': "bg-gradient-to-br from-gray-100 to-gray-900",
         'black': "bg-gradient-to-br from-black to-gray-800",
         'white': "bg-gradient-to-r from-white to-gray-300",
-    
-
         
       };
     return (
         <>
             <div>
                 {projects.map((project, index) => (
-                    <Link to={project.to} key={index} className="block w-full h-full">
+                    <Link to={project.to} key={index} className={`block w-full h-full`}>
                         <div
-                        className="relative max-w-[100vw] min-h-[80vh] flex justify-center items-center cursor-pointer overflow-hidden mb-[5px]">
+                        className={`relative max-w-[100vw] min-h-[80vh] flex justify-center items-center cursor-pointer overflow-hidden mb-[5px] opacity-0 animate-staggerFadeUp`}
+                        style={{ animationDelay: `${project.delay}s` }}>
                             <div
                             className="absolute w-full h-full bg-cover bg-center overflow-hidden transition-transform duration-300 hover:scale-110"
                             style={{ backgroundImage: `url(${project.bgImage})` }}

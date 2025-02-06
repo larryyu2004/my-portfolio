@@ -45,7 +45,13 @@ module.exports = {
             maxHeight: '0',
             opacity: '0'
           }
-        }
+        },
+
+        staggerFadeUp: {
+          '0%': { opacity: '0', transform: 'translateY(20px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' }
+        },
+
       },
       animation: {
         'extendHeight': 'extendHeight 0.2s ease-in-out forwards',
@@ -53,7 +59,8 @@ module.exports = {
         'fadeOut': 'fadeOut 0.3s ease-in-out forwards',
         'HomeExtendHeight': 'HomeExtendHeight 0.7s ease-in-out forwards',
         'phoneDropDown': 'phoneDropDown 0.5s ease-in-out forwards',
-        'phoneDropUp': 'phoneDropUp 0.5s ease-in-out forwards'
+        'phoneDropUp': 'phoneDropUp 0.5s ease-in-out forwards',
+        'staggerFadeUp': 'staggerFadeUp 0.5s ease-out forwards',
       }
     }
   },
