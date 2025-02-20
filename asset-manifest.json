@@ -1,12 +1,13 @@
 {
   "files": {
-    "main.css": "/my-portfolio/static/css/main.130a79f4.css",
-    "main.js": "/my-portfolio/static/js/main.c539ebb7.js",
+    "main.css": "/my-portfolio/static/css/main.8a42c721.css",
+    "main.js": "/my-portfolio/static/js/main.a13e65f9.js",
     "static/js/151.90a1ae94.chunk.js": "/my-portfolio/static/js/151.90a1ae94.chunk.js",
     "static/media/webFundamental.jpg": "/my-portfolio/static/media/webFundamental.9e6d276ebd5df110e22a.jpg",
     "static/media/ML.jpg": "/my-portfolio/static/media/ML.4eb24f825cb0990d4607.jpg",
     "static/media/OS.jpg": "/my-portfolio/static/media/OS.1b7509aa9eeed09a73be.jpg",
     "static/media/myPortfolio.jpg": "/my-portfolio/static/media/myPortfolio.6d8337dad634248d2c5f.jpg",
+    "static/media/riscv.jpg": "/my-portfolio/static/media/riscv.357dd9d1367ece7d05e8.jpg",
     "static/media/react.jpeg": "/my-portfolio/static/media/react.9d2b31ccab4cc55bc9e7.jpeg",
     "static/media/portfolio.jpg": "/my-portfolio/static/media/portfolio.5de7a84b3edd7fa54d79.jpg",
     "static/media/leetcode.jpeg": "/my-portfolio/static/media/leetcode.510cdff9835376a95df5.jpeg",
@@ -18,12 +19,12 @@
     "static/media/moon-svgrepo-com.svg": "/my-portfolio/static/media/moon-svgrepo-com.5a635996c6b52778c1b94186412cd138.svg",
     "static/media/cross-svgrepo-com.svg": "/my-portfolio/static/media/cross-svgrepo-com.30252da164c2bf87d2c1f49ad612319b.svg",
     "static/media/device_hub_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg": "/my-portfolio/static/media/device_hub_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.aa5c7f1af61adfb2b8e75ef50044f112.svg",
-    "main.130a79f4.css.map": "/my-portfolio/static/css/main.130a79f4.css.map",
-    "main.c539ebb7.js.map": "/my-portfolio/static/js/main.c539ebb7.js.map",
+    "main.8a42c721.css.map": "/my-portfolio/static/css/main.8a42c721.css.map",
+    "main.a13e65f9.js.map": "/my-portfolio/static/js/main.a13e65f9.js.map",
     "151.90a1ae94.chunk.js.map": "/my-portfolio/static/js/151.90a1ae94.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.130a79f4.css",
-    "static/js/main.c539ebb7.js"
+    "static/css/main.8a42c721.css",
+    "static/js/main.a13e65f9.js"
   ]
 }
