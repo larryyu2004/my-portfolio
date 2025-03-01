@@ -110,6 +110,14 @@ const Navigation = () => {
         <ContactDropdown />
         </div>
 
+        <div 
+          className="relative"
+        >
+        <li className="nav-item hidden md:block">
+          <Link to="/blog">Blog</Link>
+        </li>
+        </div>
+
         <button
           onClick={handleDarkMode}
           className="absolute right-10 p-2 rounded-full transition-colors duration-300">

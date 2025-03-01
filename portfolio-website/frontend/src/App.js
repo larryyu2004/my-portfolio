@@ -5,9 +5,10 @@ import { Provider } from 'react-redux';
 import Navigation from './components/navigation/Navigation';
 import Home from './components/home/Home';
 import Projects from './components/projects/Projects';
-import OS from './components/projects/OS';
+import Blog from './components/blog/blog';
 import Contact from './components/contact/Contact';
 import Courses from './components/home/cources/Courses';
+
 
 
 const App = () => {
@@ -22,8 +23,8 @@ const App = () => {
           <Route path="/home" element={<Home />} />
           <Route path="/courses" element={<Courses />} />
           <Route path="/projects" element={<Projects />} />
-          <Route path="/projects/os" element={<OS />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/blog" element={<Blog />} />
         </Routes>
       </div>
       

@@ -51,7 +51,7 @@ export default class ProjectsCards extends Component {
                     activeIndex: (prevState.activeIndex + 1) % this.OperatingSystem.length,
                 }));
             }
-        }, 3000);
+        }, 1500);
     };
     stopCarousel () {
         clearInterval(this.carouselInterval);
