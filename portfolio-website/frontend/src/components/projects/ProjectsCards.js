@@ -68,7 +68,6 @@ export default class ProjectsCards extends Component {
 
   render() {
     const { activeIndex } = this.state;
-    console.log(activeIndex);
     const projects = [
 
         {

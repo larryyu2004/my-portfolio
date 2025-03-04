@@ -29,7 +29,7 @@ class Education extends Component {
                     </svg>
 
                     <div className="absolute z-10 h-full flex flex-col items-end w-full">
-                        <h1 className="text-2xl md:text-4xl font-bold dark:text-white">Adelaide University</h1>
+                        <h1 className="text-2xl md:text-4xl font-bold text-gray-600 dark:text-white">Adelaide University</h1>
                         <p className="mt-4 font-bold dark:text-gray-300">From a Year 1 student</p>
                         <Link to="/courses">
                         <button className="mt-4 bg-gradient-to-r from-blue-600 to-purple-600 

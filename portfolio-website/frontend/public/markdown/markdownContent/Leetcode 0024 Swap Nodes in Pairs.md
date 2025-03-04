@@ -1,6 +1,8 @@
-Problem: Leetcode 24. Swap Nodes in Pairs
+# Problem: Leetcode 24. Swap Nodes in Pairs
 
-Given a linked list, swap every two adjacent nodes and return its head. You must solve the problem without modifying the values in the list's nodes (i.e., only nodes themselves may be changed.)
+### Given a linked list, swap every two adjacent nodes and return its head. You must solve the problem without modifying the values in the list's nodes (i.e., only nodes themselves may be changed.)
+
+---
 
 # THINKING
 
@@ -25,6 +27,8 @@ Think about is, we need to swap two nodes, right? **Head** has pointed to N1, N1
     3. Set node1 to head.
     4. Set node2 later, becuase we need to judge whether it can be swapped with rest amount(s) of nodes(use node1 to judge).
     5. setnext to the next node of node1 before swapped.
+
+---
 
 # PROCESS
 ## 1. About dummy node:
@@ -89,10 +93,14 @@ while(node1 != nullptr && node1 -> next != nullptr){
         if(node1 != nullptr) previous -> next = node1;
 ```
 
-## COMPLEXITY
+---
+
+# COMPLEXITY
 Time Complexity: **O(n)**
 
 Space Complexity: **O(1)**
+
+---
 
 # CODE
 ```C++
