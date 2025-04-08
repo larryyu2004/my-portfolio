@@ -49,9 +49,9 @@ const Blog = () => {
             <button
               key={index}
               onClick={() => setSelectedFile(file)}
-              className={`text-left dark:text-white p-2 rounded-md ${
+              className={`text-left dark:text-white p-2 font-bold rounded-md ${
                 selectedFile === file
-                  ? "bg-blue-500 dark:bg-orange-600 text-white"
+                  ? "bg-gradient-to-r from-blue-600 to-purple-600 dark:from-orange-600 dark:to-yellow-300 dark:bg-orange-600 text-white"
                   : "hover:bg-blue-200 dark:hover:bg-gray-700"
               }`}
             >
@@ -59,7 +59,7 @@ const Blog = () => {
             </button>
           ))}
         </div>
-        <div className="prose lg:prose-xl text-gray-800 dark:text-white w-3/4 pl-4 overflow-y-auto h-full">
+        <div className="prose lg:prose-xl text-gray-800 dark:text-white w-3/4 pl-5 mr-5 overflow-y-auto h-full">
           <ReactMarkdown components={{
             h1: ({node, ...props}) => <h1 className="text-4xl font-bold pt-3 pb-3" {...props} />,
             h2: ({node, ...props}) => <h2 className="text-2xl font-bold" {...props} />,
