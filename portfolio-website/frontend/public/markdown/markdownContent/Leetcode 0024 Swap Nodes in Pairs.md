@@ -6,12 +6,12 @@
 
 # THINKING
 
-## 1.FIRST OF ALL, whether we should create a dummy node?
+## 1. FIRST OF ALL, whether we should create a dummy node?
 N1(Head) -> N2 -> N3 -> N4 -> N5 -> ......
 
 Think about is, we need to swap two nodes, right? **Head** has pointed to N1, N1 then swaps with N2. Now, you want to start from N2, but **Head** still point to N1, it makes us feel confused. It is not as good as creating a dummy node. How to use it? When we return, set a pointer **ans** , **ans** is the next node of dummy, delete dummy, return **ans**.
 
-## 2.What nodes do we need?
+## 2. What nodes do we need?
 ### N2 -> N1(previous) -  N4 -> N3 -  N5 ->......
 2.1 **previous** , after we have swaped nodes in pairs. How we connect them with previous one? So we should set **previous**.
 
@@ -21,7 +21,7 @@ Think about is, we need to swap two nodes, right? **Head** has pointed to N1, N1
 ### N1(node1) -> N2(node2) -> N3(next) -> N4 -> N5 -> ......
 2.3 **next** , **next** is for the start of the next group that we want to swap. Why we need **next** ? If we don't, how can we get the next node1(After swapping, the address of **node1** and **node2** are swapped, why not store the start of the next group advanced?)
 
-## 3.Initialize
+## 3. Initialize
     1. What if there is no node? We need to deal it first.
     2. At the begining of executing, we do not use previous , so previous can be initialised to dummy node.
     3. Set node1 to head.
@@ -70,7 +70,7 @@ public:
 
         }
 ```
-## 3. swapping
+## 3. Swapping
 ```CPP
 while(node1 != nullptr && node1 -> next != nullptr){
 
@@ -88,7 +88,7 @@ while(node1 != nullptr && node1 -> next != nullptr){
             node1 = next;
         }
 ```
-## 4. deal with odd amount(s) of the listnode
+## 4. Deal with odd amount(s) of the listnode
 ```CPP
         if(node1 != nullptr) previous -> next = node1;
 ```
